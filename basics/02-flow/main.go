@@ -23,14 +23,14 @@ func PrintFormattedLoop() {
 	fmt.Println(sum)
 }
 
-// for ; sum < 1000; 
+// for ; sum < 1000;
 // 初期化(i := 0), 後処理(i++)の記述は任意
-// セミコロンを省略することも可能 for sum < 1000 
+// セミコロンを省略することも可能 for sum < 1000
 // while文はない、Goではforを用いる
 func InitializeLoop() {
 	sum := 1
-	for ; sum < 1000; {
-	// for sum < 1000 省略version
+	for sum < 1000 {
+		// for sum < 1000 省略version
 		sum += sum
 	}
 
@@ -40,14 +40,30 @@ func InitializeLoop() {
 }
 
 // if statement
-func sqrt (x float64) string {
+func sqrt(x float64) string {
 	if x < 0 {
 		return sqrt(-x) + "i"
 	}
 	return fmt.Sprint(math.Sqrt(x))
 }
 
+// v := math.Pow(x, n)
+// if statementは条件の前に評価するためのstatementを記述可能
+// scopeはif内のみ
+func pow(x, n, lim float64) float64 {
+	fmt.Println(math.Pow(x, n))
+	if v := math.Pow(x, n); v < lim {
+		fmt.Println(v)
+		return v
+	}
+
+	return lim
+}
 func main() {
 	// PrintFormattedLoop()
-	fmt.Println(sqrt(2), sqrt(-4))
+	// fmt.Println(sqrt(2), sqrt(-4))
+	fmt.Println(
+		pow(3, 2, 10),
+		pow(3, 3, 20),
+	)
 }
