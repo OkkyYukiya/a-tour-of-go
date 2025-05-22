@@ -1,3 +1,3 @@
 module github.com/OkkyYukiya/A.tour.of.Go
 
-go 1.24.1
+go 1.24
