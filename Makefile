@@ -1,7 +1,7 @@
-.PHONY: run-1 run-2
+.PHONY: flow packages
 
-run-1:
+run-flow:
 	go run ./basics/01-packages/main.go
 
-run-2:
+run-packages:
 	go run ./basics/02-flow/main.go
