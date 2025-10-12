@@ -1,6 +1,21 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
+
+func pow (x, n, lim float64) float64 {
+	// vにmath.Pow(x, n)の結果が代入される
+	// 続いてそのままvとlimを比較
+	// trueであればvが返される
+	if v := math.Pow(x, n); v < lim {
+		return v
+	} else {
+		fmt.Printf("%g >= %g\n", v, lim)
+	}
+	return lim
+}
 
 func Sqrt(x float64) float64 {
 	z := 1.0
@@ -22,7 +37,10 @@ func Sqrt(x float64) float64 {
 	return z
 }
 
-func main() {
-	root := Sqrt(9)
-	fmt.Println("Square root of 9 is:", root)
+func main () {
+	// fmt.Println(
+	// 	pow(3,2,10),
+	// 	pow(3,3,20),
+	// )
+	fmt.Println(Sqrt(2))
 }
